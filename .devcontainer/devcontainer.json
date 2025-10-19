@@ -1,0 +1,28 @@
+{
+  "name": "figma-landing-next (full)",
+  "build": { "dockerfile": "Dockerfile" },
+  "postCreateCommand": "corepack enable && pnpm i",
+  "features": {},
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.formatOnSave": true,
+        "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+        "files.eol": "\n"
+      },
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "bradlc.vscode-tailwindcss",
+        "ms-playwright.playwright",
+        "streetsidesoftware.code-spell-checker"
+      ]
+    }
+  },
+  "forwardPorts": [3000, 6006],
+  "portsAttributes": {
+    "3000": { "label": "Next.js" },
+    "6006": { "label": "Storybook" }
+  },
+  "remoteUser": "node"
+}

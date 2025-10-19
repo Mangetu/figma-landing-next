@@ -1,0 +1,40 @@
+name: "💬Quote Request"
+description: Figma→Next.js Request a quote for implementation
+title: "[Quote] Enter project name"
+labels: ["quote", "triage"]
+assignees: []
+body:
+  - type: input
+    id: contact
+    attributes:
+      label: contact address (GitHub/email/Slack invitation etc.)
+      placeholder: your@email
+    validations: { required: true }
+  - type: textarea
+    id: figma
+    attributes:
+      label: Figma link (set to visible)
+      description: Reference page/frame and password, if any
+      placeholder: https://www.figma.com/file/...
+    validations: { required: true }
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Implementation range
+      options:
+        - label: Responsive
+        - label: Image/SVG optimization
+        - label: Animation (minor)
+        - label: OG/SEO/Measurement (GA/Tag)
+        - label: Storybook
+  - type: dropdown
+    id: deadline
+    attributes:
+      label: Desired delivery date
+      options: ["Urgent (within 1 week)", "Normal (2-3 weeks)", "Consultation"]
+    validations: { required: true }
+  - type: textarea
+    id: notes
+    attributes:
+      label: Supplementary and reference sites
+      placeholder: Reference URLs and notes
